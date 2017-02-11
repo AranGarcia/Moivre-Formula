@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import matplotlib.pyplot as plt
 import numpy
 
@@ -15,6 +14,7 @@ def graficar_complejos(lista_complejos = None):
     
     plt.ylabel('Imaginarios')
     plt.xlabel("Reales")
+    plt.axis('equal')
 
     for i in range(len(lista_complejos)):
         plt.plot([0, numpy.real(lista_complejos[i])], [0, numpy.imag(lista_complejos[i])])
