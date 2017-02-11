@@ -1,7 +1,7 @@
 import cmath
 import math
 
-def sacar_raices(c, n):
+def sacarRaices(c, n):
     """
     sacar_raices(complejo, indice) -> [raiz_1, raiz_2, ... , raiz_n]
 
@@ -23,7 +23,7 @@ def sacar_raices(c, n):
 
     for i in range(n):
         i_theta = (angulo + 2 * math.pi * i) / n
-        raices.append([raiz_radio, math.degrees(i_theta)])
+        raices.append( cmath.rect(raiz_radio, i_theta) )
 
     return raices
 #Fin función sacar_raices
