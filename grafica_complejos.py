@@ -31,12 +31,18 @@ def graficar_complejos(radicando, indice, lista_complejos = None, ):
 
     #Dibuja el círculo para representar el límite de todas las raíces
     radio = math.sqrt( numpy.real(lista_complejos[0]) ** 2 + numpy.imag(lista_complejos[0]) ** 2 )
-    print(radio)
-    circulo = plt.Circle((0,0), radio, color = 'k', fill = False)
+    circulo = plt.Circle((0,0), radio, color = 'k', fill = False, linestyle = ":")
     ax = plt.gca()
     ax.add_artist(circulo)
 
     #Dibuja linea desde el origen al complejo original (radicando)
     plt.plot([0, numpy.real(radicando)], [0, numpy.imag(radicando)], 'k--', label = "Radicando: " + str(radicando))
+
+    #Agrega una leyenda
+    handles, etiquetas = ax.get_legend_handles_labels()
+    handles.append(circulo)
+    etiquetas += ["Límte de raíces"]
+    ax.legend(handles, etiquetas)
+
 
     plt.show()
