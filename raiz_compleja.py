@@ -23,9 +23,8 @@ except ValueError:
 
 
 r = formula_moivre.sacarRaices(z, indice);
-r.append(z)
 
 for i in r:
     print(i)
 
-grafica_complejos.graficar_complejos(r)
+grafica_complejos.graficar_complejos(z, indice, r)
