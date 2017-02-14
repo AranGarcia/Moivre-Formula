@@ -18,6 +18,8 @@ except ValueError:
 #Verifica que el tercer argumento sea un numero natural
 try:
     indice = int(sys.argv[2])
+    if indice <= 0:
+        raise ValueError()
 except ValueError:
     sys.exit("\n  ERROR: " + str(sys.argv[2]) + " no es un numero natural'\n")
 
